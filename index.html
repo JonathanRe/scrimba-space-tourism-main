@@ -15,20 +15,38 @@
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
+<body class="home">
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+    </div>
 
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
+    <nav>
+      <ul class="primary-navigation underline-indicators flex">
+        <li class="active"><a class="uppercase text-white fs-300 ff-sans-cond letter-spacing-2" href="index.html"><span>00</span>Home</a></li>
+        <li><a class="uppercase text-white fs-300 ff-sans-cond letter-spacing-2" href="destination.html"><span>01</span>Destination</a></li>
+        <li><a class="uppercase text-white fs-300 ff-sans-cond letter-spacing-2" href="crew.html"><span>02</span>Crew</a></li>
+        <li><a class="uppercase text-white fs-300 ff-sans-cond letter-spacing-2" href="technology.html"><span>03</span>Technology</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  Explore
+  
+  <main class="grid-container">
+    <div>
+      <h1 class="uppercase ff-sans-cond fs-500 text-light letter-spacing-large">So, you want to travel to <span class="display-block ff-serif fs-900 text-white letter-spacing-none">Space</span></h1>
+      <p class="text-light">
+        Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
+
+    <div>
+      <a href="#" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+    </div>
+  </main>
 
 </body>
 </html>

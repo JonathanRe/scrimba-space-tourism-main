@@ -9,12 +9,12 @@
     --clr-white-hsl: 0 0% 100%;
 
     /* font sizes */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
     --fs-500: 1.75rem;
-    --fs-400: 1.125rem;
+    --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
 
@@ -22,6 +22,24 @@
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
 }
 
 
@@ -91,6 +109,10 @@ picture {
     gap: var(--gap, 1rem);
 }
 
+.display-block {
+    display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
@@ -100,6 +122,27 @@ picture {
     padding-inline: 2rem;
     margin-inline: auto;
 }
+
+.grid-container {
+    display: grid;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+    }
+
+    .grid-container > *:first-child {
+        grid-column: 2;
+    }
+    
+    .grid-container > *:last-child {
+        grid-column: 3;
+    }
+}
+
+
 
 .visually-hidden {
     clip: rect(0 0 0 0); 
@@ -148,6 +191,7 @@ picture {
 .letter-spacing-large { letter-spacing: 4.75px; } 
 .letter-spacing-medium { letter-spacing: 2.7px; } 
 .letter-spacing-small { letter-spacing: 2.35px; } 
+.letter-spacing-none { letter-spacing: 0; }
 
 .uppercase { text-transform: uppercase; }
 
@@ -188,7 +232,7 @@ picture {
 .large-button {
     position: relative;
     isolation: isolate;
-    display: grid;
+    display: inline-grid;
     place-items: center;
     padding-inline: 2em;
     aspect-ratio: 1;
@@ -216,6 +260,7 @@ picture {
 
 .primary-navigation {
     --gap: 8rem;
+    --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -303,5 +348,8 @@ body {
     font-family: var(--ff-sans-normal);
     color: hsl( var(--clr-white-hsl) );
     background-color: hsl( var(--clr-dark-hsl) );
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
